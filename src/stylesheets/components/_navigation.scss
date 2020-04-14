@@ -1,0 +1,129 @@
+.navigation {
+  $self: &;
+  @include z-index("menu");
+  @include background-opacity($dark-background, 0.7);
+  position: absolute;
+  width: 100%;
+  box-shadow: $shadow;
+  .container {
+    &--navigation {
+      padding: 1em 0;
+      align-items: center;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      @include desktop {
+        grid-template-columns: 150px auto;
+      }
+      @include navigation {
+        grid-template-columns: 200px auto 200px;
+        grid-gap: 0;
+      }
+    }
+  }
+  li {
+    margin: 0.5em 0;
+    a {
+      color: $white;
+    }
+  }
+  &__submenu {
+    display: none;
+    position: relative;
+    @include laptop {
+      position: absolute;
+    }
+    background: $white;
+    min-width: 250px;
+    li {
+      &.active {
+        a {
+          background: $primary-color;
+        }
+      }
+      a {
+        padding: 1em 1.5em;
+        color: $black;
+        width: 100%;
+        position: relative;
+        transition: 0.3s;
+        &:before {
+          position: absolute;
+          left: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          content: "";
+          height: 3px;
+          width: 5px;
+          background: $primary-color;
+        }
+        &:after {
+          display: none;
+        }
+        &:hover {
+          background: $primary-color;
+        }
+      }
+    }
+  }
+  &__children {
+    &:hover {
+      #{$self}__submenu {
+        display: block;
+      }
+    }
+    a {
+      position: relative;
+      &:after {
+        display: block;
+        content: "";
+        position: absolute;
+        right: -15px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: url("/wp-content/uploads/assets/images/read-more-arrow.svg");
+        background-size: 9px 6px;
+        height: 6px;
+        width: 9px;
+      }
+    }
+  }
+  &__contact {
+     
+    display: inline-block;
+    background-color: #ffdc00;
+    padding: 4px 10px;
+    border-radius: 5px;
+    @include navigation {
+      display: none;
+    }
+  }
+  &__list {
+    display: none;
+    justify-content: space-around;
+    &--open {
+      display: block;
+      order: 3;
+      grid-column: span 2;
+    }
+    @include desktop {
+      display: flex;
+      margin: 0 0 0 3em;
+    }
+    @include navigation {
+      margin: 0 3em;
+    }
+  }
+  &__button {
+    display: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    @include navigation {
+      display: block;
+    }
+  }
+}
+li.current-menu-ancestor.current-menu-parent > a,
+li.current_page_parent > a {
+  text-decoration: underline;
+  text-decoration-color: $white-text;
+}

@@ -1,0 +1,115 @@
+.footer {
+  $self: &;
+  background: $dark-background;
+  padding: 2.5rem 0;
+  color: $white;
+  @include tablet {
+    padding: 5rem 0;
+  }
+  @include laptop {
+    padding: 5rem 0;
+  }
+  @include retina {
+    padding: 5rem 0;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    &--two {
+      grid-template-columns: 1fr;
+      @include laptop {
+        grid-template-columns: repeat(6, 1fr);
+        align-items: center;
+        border-bottom: 1px solid #707070;
+      }
+      #{ $self }__block {
+        &:first-child {
+          @include laptop {
+            grid-column: 1 / span 3;
+          }
+        }
+        &:last-child {
+          @include laptop {
+            grid-column: 5 / span 1;
+          }
+        }
+      }
+    }
+    &--five {
+      grid-template-columns: 1fr;
+      margin-bottom: 1em;
+      #{ $self }__block {
+        margin: 0 0.5em;
+        h5 {
+          font-weight: 600;
+        }
+        a {
+          color: transparentize($white, 0.65);
+          transition: 0.3s;
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+      @include tablet {
+        grid-template-columns: 1fr 1fr;
+      }
+      @include laptop {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        padding-bottom: 1em;
+        border-bottom: 1px solid #707070;
+      }
+      @include retina {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      }
+    }
+    &--copyright {
+      text-align: center;
+      p {
+        color: transparentize($white, 0.65);
+        a {
+          color: transparentize($primary-color, 0.65);
+          transition: 0.3s;
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+
+  &__block {
+    &--cta {
+      .socials {
+        margin-top: 1em;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        text-align: center;
+        img {
+          transition: 0.3s;
+          &:hover {
+            opacity: 0.75;
+          }
+        }
+      }
+    }
+  }
+
+  &__strapline {
+    font-weight: 300;
+    font-size: 2.5em;
+    line-height: 150%;
+  }
+
+  &__button {
+    border-radius: 10px;
+    width: 100%;
+    font-size: 1.2rem;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+  }
+}

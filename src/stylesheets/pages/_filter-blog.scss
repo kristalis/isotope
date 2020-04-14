@@ -1,0 +1,43 @@
+
+ 
+  .transparent-100 {
+  background-color: transparent;
+  }
+  .transparent-50 {
+  background-color: rgba(255, 220, 0, .5);
+  }
+
+  .filter__btn-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    }
+    .filter__btn-section .btn {
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.2rem;
+    transition: .5s;
+    cursor: pointer;
+    outline: none;
+}
+
+ 
+  .btn-load-more {
+  background-color: $black-text;
+  color: $white-text;
+  margin: 2rem 0;
+  }
+ 
+  .bg-img {
+  background-size: cover;
+  min-height: 436px;
+  background-position: center;
+    
+  }
+
+  .card {
+    border-radius: .25rem;
+    background: $primary-color;
+    margin-bottom: 10px;
+    }

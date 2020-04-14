@@ -1,0 +1,43 @@
+$mobile-width: 90%;
+$tablet-width: 85%;
+$laptop-width: 75%;
+$full-width: 95%;
+
+$max-width: 1224px;
+
+$extra-small-max-width: 750px;
+$small-max-width: 1000px;
+$large-max-width: 1500px;
+$extra-large-max-width: 1750px;
+
+/* custom container2col */
+.container,
+.col2container {
+  width: $mobile-width;
+  margin: auto;
+
+  @include tablet {
+    width: $tablet-width;
+  }
+
+  &--extra-small {
+    max-width: $extra-small-max-width;
+  }
+
+  &--small {
+    max-width: $small-max-width;
+  }
+
+  &--large {
+    max-width: $large-max-width;
+  }
+
+  &--extra-large {
+    max-width: $extra-large-max-width;
+  }
+
+  &--full-width {
+    width: $full-width;
+    max-width: unset;
+  }
+}

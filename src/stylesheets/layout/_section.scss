@@ -1,0 +1,485 @@
+// Section.
+.section {
+  $self: &;
+  padding: 2.5rem 0;
+  @include tablet {
+    padding: 5rem 0;
+  }
+  @include laptop {
+    padding: 5rem 0;
+  }
+  @include retina {
+    padding: 5rem 0;
+  }
+
+  &__h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    @include tablet {
+      font-size: 1.5rem;
+      line-height: 2;
+    }
+    @include laptop {
+      font-size: 2rem;
+      line-height: 2.7rem;
+    }
+    @include retina {
+      font-size: 2.5rem;
+      line-height: 3.4rem;
+    }
+  }
+
+  &__title {
+    padding: unset;
+    font-size: 2rem;
+    font-weight: $light;
+    font-family: $heading-font-family;
+    padding-left: 3rem;
+    line-height: 2.5rem;
+    padding-bottom: 0.5rem;
+
+    &-content {
+      position: relative;
+      &:before {
+        @extend %pseudo;
+        width: 60px;
+        height: 40px;
+        position: absolute;
+        background: url("/wp-content/uploads/assets/images/yellow-cube.png");
+        background-size: auto;
+        background-repeat: no-repeat;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -4rem;
+        @include laptop {
+          font-size: 2.1rem;
+        }
+        @include retina {
+          font-size: 2.3rem;
+          padding-left: unset;
+        }
+      }
+    }
+
+    @include tablet {
+      font-size: 2.5rem;
+      line-height: 3.5rem;
+    }
+    @include laptop {
+      font-size: 3rem;
+      line-height: 4rem;
+    }
+    @include retina {
+      font-size: 3.5rem;
+      line-height: 4.75rem;
+      padding-left: unset;
+    }
+
+    &--center {
+      text-align: center;
+    }
+    &--pad-bottom {
+      padding-bottom: 1.5em;
+    }
+  }
+
+  &__subtitle {
+    padding: unset;
+    font-weight: $bold;
+    font-size: 1rem;
+    font-family: $body-font-family;
+    color: $dark-text;
+
+    @include tablet {
+      font-size: 1rem;
+    }
+    @include laptop {
+      font-size: 1.5rem;
+    }
+    @include retina {
+      font-size: 2rem;
+    }
+  }
+
+  &__text {
+    color: $dark-text;
+    font-size: 1rem;
+    line-height: 1.875rem;
+    @include laptop {
+      font-size: 1.2rem;
+      line-height: 2.8125rem;
+    }
+  }
+
+  &__link {
+    font-weight: $semi-bold;
+    color: $light-text;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+    &:before {
+      @extend %pseudo;
+      background: url("/wp-content/uploads/assets/images/read-more-arrow.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 10px;
+      right: -18px;
+      @include laptop {
+        width: 20px;
+        height: 14px;
+        right: -24px;
+      }
+    }
+    @include laptop {
+      font-size: 1.2rem;
+      line-height: 2.8125rem;
+    }
+
+    &--box {
+      display: block;
+      background: #ffffff 0% 0% no-repeat padding-box;
+      box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      opacity: 0.9;
+      margin: 0 auto;
+      margin-bottom: 5px;
+      width: 600px;
+      max-width: 100%;
+      text-align: left;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      color: $grey-text;
+      font-weight: $semi-bold;
+      transition: color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+
+      &:hover {
+        box-shadow: 0px 3px 20px rgba(248, 191, 88, 0.4);
+        color: $black-text;
+        opacity: 1;
+      }
+
+      &:before {
+        background: unset;
+      }
+      &:after {
+        @extend %pseudo;
+        background: url("/wp-content/uploads/assets/images/full-read-more-arrow.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 15px;
+        height: 24px;
+        right: 25px;
+      }
+
+      @include laptop {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+      @include retina {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+
+      #{$self}__link-content {
+        padding: 0;
+        padding-left: 3rem;
+        &:before {
+          @extend %pseudo;
+          width: 60px;
+          height: 40px;
+          position: absolute;
+          background: url("/wp-content/uploads/assets/images/yellow-cube.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 1rem;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &--hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url("/wp-content/uploads/assets/images/header-image.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 100vh;
+    padding-top: 9rem;
+    @include retina {
+      padding-top: 10rem;
+    }
+
+    #{$self}__h1,
+    #{$self}__title,
+    #{$self}__subtitle,
+    #{$self}__text {
+      color: $white-text;
+    }
+    #{$self}__h1 {
+      font-size: 1.8rem;
+      padding-bottom: 2.5rem;
+      @include laptop {
+        padding-bottom: 0;
+      }
+    }
+    #{$self}__text {
+      font-size: 1rem;
+      line-height: 1.56rem;
+      @include laptop {
+        font-size: 1.2rem;
+        line-height: 2.35rem;
+      }
+    }
+
+    .link-boxes {
+      text-align: center;
+    }
+  }
+
+  &--dark {
+    background: $dark-background;
+    #{$self}__subtitle,
+    #{$self}__text {
+      color: $white-text;
+    }
+    #{$self}__title {
+      color: $light-text;
+    }
+  }
+
+  &--medium {
+    background: $medium-background;
+    #{$self}__title,
+    #{$self}__subtitle,
+    #{$self}__text,
+    #{$self}__link {
+      color: $black-text;
+    }
+    #{$self}__link {
+      &:before {
+        background: url("/wp-content/uploads/assets/images/read-more-arrow-black.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+  &--ctatitle {
+    @include tablet {
+      width: 59vw;
+    }
+
+    @include desktop {
+      width: 48vw;
+    }
+
+    @include navigation {
+      width: 40vw;
+    }
+    margin: auto;
+    padding-bottom: 20px;
+  }
+  &--center {
+    text-align: center;
+  }
+  &--no-padding {
+    padding: unset;
+  }
+  &--mobile--no-padding {
+    @include mobile {
+      padding: unset;
+    }
+  }
+  &--mobile--no-top {
+    @include mobile
+    {
+      padding-top: unset;
+    }
+  }
+  &--mobile--no-bottom {
+    @include mobile
+    {
+      padding-bottom: unset;
+    }
+  }
+
+  &--no-top {
+    @include tablet {
+      padding-top: unset;
+    }
+    @include laptop {
+      padding-top: unset;
+    }
+    @include retina {
+      padding-top: unset;
+    }
+  }
+
+  &--no-bottom {
+    @include tablet {
+      padding-bottom: unset;
+    }
+    @include laptop {
+      padding-bottom: unset;
+    }
+    @include retina {
+      padding-bottom: unset;
+    }
+  }
+
+  &--skew {
+    clip-path: polygon(0 15vw, 100% 0, 100% calc(100% - 15vw), 0% 100%);
+    padding: 7.5rem 0;
+    @include tablet {
+      padding: 11rem 0;
+    }
+    @include laptop {
+      padding: 14rem 0;
+    }
+    @include retina {
+      padding: 18rem 0;
+    }
+  }
+  &--angle-down {
+    clip-path: polygon(0 0, 100% 15vw, 100% 100%, 0% calc(100% - 15vw));
+  }
+
+  &--clip-bottom {
+    clip-path: polygon(0 0, 100% 15vw, 100% 100%, 0% 100%);
+    padding-bottom: unset;
+  }
+}
+
+.container {
+  $self: &;
+
+  @include laptop {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 3rem;
+    &__content {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      &--right {
+        grid-column-start: 2;
+        grid-column-end: 4;
+      }
+      &--center {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        text-align: center;
+      }
+      &--pleft {
+        grid-column-start: 1;
+        grid-column-end: 3;
+
+      }
+      &--img-right {
+        display: flex;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  @include navigation {
+    grid-gap: 8rem;
+  }
+  @include retina {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    &__content {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      &--right {
+        grid-column-start: 2;
+        grid-column-end: 4;
+      }
+      &--center {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        text-align: center;
+      }
+    }
+  }
+  &--block {
+    display: block;
+    @include retina {
+      display: block;
+    }
+    @include laptop {
+      display: block;
+    }
+  }
+}
+
+/** custom  */
+.col2container {
+  $self: &;
+ 
+  @include laptop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 90px;
+   
+    &__content {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      &--pleft {
+        grid-column-start: 1;
+        grid-column-end: 2;
+      }
+      &--pright {
+        grid-column-start: 2;
+        grid-column-end: 3;
+      }
+     
+    }
+  }
+  @include retina {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 138px;
+    &__content {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      &--pleft {
+        grid-column-start: 1;
+        grid-column-end: 2;
+      }
+      &--pright {
+        grid-column-start: 2;
+        grid-column-end: 3;
+      }
+     
+    }
+  }
+  &--block {
+    display: block;
+    @include retina {
+      display: block;
+    }
+    @include laptop {
+      display: block;
+    }
+  }
+}
+
+.link-boxes {
+  padding-top: 1rem;
+}

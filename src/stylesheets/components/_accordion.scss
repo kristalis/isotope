@@ -1,0 +1,8 @@
+.accordion {
+  &__footer {
+    display: none;
+    &--open {
+      display: initial;
+    }
+  }
+}
